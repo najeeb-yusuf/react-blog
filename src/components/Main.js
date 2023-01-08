@@ -10,6 +10,8 @@ export default function Main() {
                 <MainEntry />
                 <MainEntry />
                 <MainEntry />
+                <MainEntry />
+                <MainEntry />
             </div>
         </main>
     )
