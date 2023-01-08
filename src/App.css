@@ -1,38 +1,513 @@
-.App {
+:root {
+  --clr-primary-400: rgba(255, 89, 123, 1);
+  --clr-primary-200: rgba(255, 89, 123, 0.75);
+
+  --clr-neutral-100: rgba(255, 255, 255, 1);
+  --clr-neutral-300: rgba(165, 165, 165, 1);
+  --clr-neutral-900: rgba(0, 0, 0, 1);
+
+  --clr-base: rgba(39, 39, 39, 1);
+
+  --ff-body: 'Lexend Deca', serif;
+  --ff-heading: 'DM Serif Display', sans-serif;
+
+  --fw-2: 200;
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+
+
+
+  --fs-1000: 4rem;
+  --fs-900: 3rem;
+  --fs-800: 2rem;
+  --fs-700: 1.5rem;
+  --fs-500: 1rem;
+  --fs-400: 0.75rem;
+  --fs-300: 0.625rem;
+
+  --fs-body: var(--fs-500);
+  --fs-super-heading: var(--fs-900);
+  --fs-heading: var(--fs-800);
+  --fs-subtext: var(--fs-300) --fs-logos: var(--fs-1000);
+
+  --padding-100: 0.75rem;
+  --padding-200: 1rem;
+  --padding-300: 1.25rem;
+  --padding-400: 1.5rem;
+  --padding-500: 1.75rem;
+}
+
+@media (min-width: 30em) {
+  :root {
+    --fs-300: 0.8125rem;
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3rem;
+
+    --fs-body: var(--fs-500);
+    --fs-super-heading: var(--fs-900);
+    --fs-heading: var(--fs-700);
+    --fs-subtext: var(--fs-300) --fs-logos: var(--fs-1000)
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Remove list styles on ul, ol elements  */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+* {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+
+/* Utility classes */
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.text-primary-200 {
+  color: var(--clr-primary-200);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.text-base {
+  color: var(--clr-base);
+}
+
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-primary-200 {
+  background-color: var(--clr-primary-200);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-primary-100);
+}
+
+.bg-neutral-300 {
+  background-color: var(--clr-primary-300);
+}
+
+.bg-neutral-900 {
+  background-color: var(--clr-primary-900);
+}
+
+.bg-base {
+  background-color: var(--clr-base);
+}
+
+
+.fw-2 {
+  font-weight: var(--fw-2);
+}
+
+.fw-3 {
+  font-weight: var(--fw-3);
+}
+
+.fw-4 {
+  font-weight: var(--fw-4);
+}
+
+.fw-5 {
+  font-weight: var(--fw-5);
+}
+
+.fw-6 {
+  font-weight: var(--fw-6);
+}
+
+.fw-7 {
+  font-weight: var(--fw-7);
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+  line-height: 1.25rem;
+}
+@media (min-width:30em) {
+  .fs-body{
+  line-height: 1.3;
+}
+.fs-heavy{
+  font-size: var(--fs-700);
+}
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+  line-height: 2rem;
+}
+@media (min-width:30em) {
+  .fs-heading{
+  line-height: 2.75rem;
+}
+}
+
+.ff-heading{
+  font-family: var(--ff-heading);
+}
+.ff-body{
+  font-family: var(--ff-body);
+}
+
+.text-align-right{
+  text-align: right;
+}
+.text-align-left{
+  text-align: left;
+}
+.text-align-center{
   text-align: center;
 }
+/* General styles */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-100);
+  font-family: var(--ff-body);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+
+.article > p{
+  padding-block: var(--padding-200);
+}
+
+
+.button{
+  border-radius: 100vmax;
+  padding: 0.45em 0.75em;
+  font-size: var(--fs-300);
+  margin: 0 0.75rem 0 0;
+}
+
+@media (min-width:25em) {
+  .button{
+  margin: .85rem;
+  }
+  
+}
+
+.btn-inverse{
+  background-color: var(--clr-base);
+  border: 1px solid var(--clr-primary-400);
+  transition: all .2s ease-in-out;
+}
+
+button:hover{
+  /* This is temporary */
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-900);
+  transform: scale(1.2);
+}
+
+.container{
+  margin: 1.2rem;
+
+}
+
+@media (min-width:30em) {
+  
+  .container{
+    margin: 2rem;
+  
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.date-user{
+  display: flex;
+  justify-content: space-between;
+  padding-inline:10px
+}
+
+
+.App{
+  height: 100vh;
+  overflow: auto;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  border: 1px solid var(--clr-primary-400);
+  padding-block: 0.5rem;
+  margin-inline: 2rem;
+  height: auto;
+
+}
+
+@media (min-width:30em) {
+  .App{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-inline: 0;
+    width: 95px;
+    gap: 2.5rem;
+    border: 1px solid var(--clr-primary-400);
+  }
+  li:nth-child(4){
+    margin-top: 9rem;
+  }
+
+
+
+
+}
+
+
+ul > li.nav-items > a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+a >p {
+  display: none;
+}
+
+@media (min-width:30em) {
+  a{
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-300);
+  }
+  a >p {
+    display: block;
+    margin-inline: 0.5rem;
+  }
+}
+
+.navbar{
+  position: sticky;
+  bottom: 0;
+}
+
+.navbar > ul{
+  background-color: var(--clr-base);
+}
+
+main > .container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* place horizontal bar above text */
+.post-type::before{
+  content: '';
+  background: var(--clr-primary-400);
+  display: block;
+  width: 20px;
+  height: 4px;
+  margin-inline: 20px;
+}
+
+
+/* Change the display properties of the article so that the date can move to the right */
+@media(min-width:30em) {
+  .post-type{
+    margin-top: 2rem;
+  }
+
+  main > .container{
+    margin: 0;
+  }
+
+  .date-user{
+    
+        grid-row-start: 1;
+        grid-row-end: 4;
+        flex-direction: column;
+  }
+  .date{
+    font-size: var(--fs-800);
+    line-height: 3rem;
+    text-align: right;
+  }
+  .navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+
+  }
+  /* .date-user > .user{
+    transform: rotate(-90deg);
+    transform-origin: bottom right ;
+  } */
+  .article{
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    gap: 0px 0px;
+    
+  }
+  .date-user > .user{
+    transform: rotate(-90deg);
+    transform-origin: bottom right ;
+    margin-bottom: 8rem;
+  }
+  
+  
+}
+
+.hidden{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.show{
+  opacity: 1;
+}
+
+/* }
+
+.date-user{
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+}
+
+
+.App{
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  
+}
+
+nav{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width:25rem) {
+
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul{
+  display: grid;
+  gap: 3rem;
 }
+
+li:nth-child(3){
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+}
+li:nth-child(4){
+
+
+}
+
+
+
+
+.nav-items > a{
+  font-size: var(--fs-300);
+  height: 2px !important;
+}
+
+.latest{
+  
+}
+  
+ hr{
+    width: 5px;
+    font-weight: var(--fw-7);
+    text-align: center;
+  } */
