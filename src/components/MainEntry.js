@@ -11,7 +11,7 @@ export default function MainEntry(params) {
                                 15 Disadvantages Of Freedom And How You Can Workaround It.
                             </h2>
                             <p className="fw-2 fs-body text-neutral-100 ff-body">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <a className="read-more | text-primary-400">...read more</a>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <a href="https://google.com" className="read-more | text-primary-400">...read more</a>
                             </p>
                             <div className="date-user">
                                 <p className="date | fw-6 text-neutral-100"> 27 May</p>
