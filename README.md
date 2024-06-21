@@ -1,7 +1,3 @@
-Certainly! Here's a short README for your React blog:
-
----
-
 # React Blog
 
 Welcome to my React blog project! This simple blog is currently hosted on GitHub Pages and includes a homepage built using React.
